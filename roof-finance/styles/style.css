@@ -1,0 +1,331 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  h1 a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .hero {
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #003366;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0059b3;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    background-color: white;
+  }
+  
+  .feature-box {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  .open-account {
+    background-color: #fff;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  .open-account h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #003366;
+  }
+  
+  .account-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .account-form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .account-form input,
+  .account-form textarea,
+  .account-form select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .account-form button {
+    margin-top: 20px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .account-form button:hover {
+    background-color: #0059b3;
+  }
+  
+  .service-section {
+    background-color: #f5f8fa;
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  }
+  
+  .service-section h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 15px;
+  }
+  
+  .service-section p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .service-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .service-form label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .service-form input,
+  .service-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-submit {
+    background-color: #003366;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0059b3;
+  }
+  
+  .product-section {
+    padding: 50px 20px;
+    background-color: #f0f4f8;
+    text-align: center;
+  }
+  
+  .product-section h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 40px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .product-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  } 
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+}
+  
+  .product-card h3 {
+    font-size: 1.25rem;
+    color: #002244;
+    margin-bottom: 10px;
+  }
+  
+  .product-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .product-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #003366;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-btn:hover {
+    background-color: #0059b3;
+  }
+  
+  .about-section {
+    background-color: #ffffff;
+    padding: 60px 20px;
+  }
+  
+  .about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+  }
+  
+  .about-intro {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+  
+  .about-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .about-box {
+    background-color: #f5f8fa;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    text-align: left;
+  }
+  
+  .about-box h3 {
+    color: #002244;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .about-box p,
+  .about-box li {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .about-box ul {
+    padding-left: 20px;
+  }
+  
