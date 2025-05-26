@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rooflytic</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header>
+      <h1><a href="/index.html">Rooflytic</a></h1>
+    </header>
+<section class="open-account">
+    <h2>Buka Rekening Baru</h2>
+    <form class="account-form">
+      <label for="fullname">Nama Lengkap:</label>
+      <input type="text" id="fullname" name="fullname" required>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+  
+      <label for="phone">No. Telepon:</label>
+      <input type="tel" id="phone" name="phone" required>
+  
+      <label for="address">Alamat:</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+  
+      <label for="idnumber">Nomor KTP:</label>
+      <input type="text" id="idnumber" name="idnumber" required>
+  
+      <label for="account-type">Jenis Rekening:</label>
+      <select id="account-type" name="account-type" required>
+        <option value="">--Pilih Jenis Rekening--</option>
+        <option value="tabungan">Tabungan</option>
+        <option value="giro">Giro</option>
+        <option value="deposito">Deposito</option>
+      </select>
+  
+      <button type="submit" class="btn">Kirim Pendaftaran</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Yaka Technologies Inc.</p>
+  </footer>
+</body>
+</html>
