@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, #001f3f, #000d1a);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px; /* Agar konten tidak tertutup NavBar */
+}
+/* Navigation Bar */
+nav {
+    background-color: rgba(0, 0, 0, 0.65); /* Warna navbar agar transparan */
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Agar Navbar tetap diatas saat scrolling */
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+.logo {
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: auto;
+}
+ul li{
+    margin: 0 15px;
+}
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+ul li a:hover {
+    color: #007bff;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.content {
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+}
+h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transform: perspective(500px) rotateX(10deg);
+}
+.description {
+    font-size: 1.2em;
+    color: #d0d0d0;
+    margin-bottom: 20px;
+}
+.footer {
+    position: relative;
+    z-index: 1;
+    font-size: 0.8em;
+    color: #888;
+    padding: 10px 0;
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    color: white;
+    animation: glitch-skew 1s infinite linear;
+}
+
+
+@keyframes glitch-1 {
+    0% { transform: translate(2px, -2px); -webkit-transform: translate(2px, -2px); -moz-transform: translate(2px, -2px); -ms-transform: translate(2px, -2px); -o-transform: translate(2px, -2px); }
+    25% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, 2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitch-2 {
+    0% { transform: translate(-2px, 2px); }
+    25% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, -2px); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, 2px); }
+}
+
+@keyframes glitch-skew {
+    0% { transform: skew(0deg); }
+    50% { transform: skew(5deg); }
+    100% { transform: skew(0deg); }
+}
