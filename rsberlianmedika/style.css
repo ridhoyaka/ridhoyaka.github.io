@@ -141,10 +141,6 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.26);
   animation: fadeUp 1s ease;
 }
-.section-profil h2,
-p {
-  color: whitesmoke;
-}
 .sarana-grid {
   display: flex;
   justify-content: space-around;
