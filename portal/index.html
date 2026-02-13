@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yaka Playhouse!</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Orbitron", sans-serif;
+      }
+
+      body {
+        background: #060812;
+        overflow: hidden;
+        height: 100vh;
+        color: white;
+      }
+
+      /* ================= WAVE SYSTEM ================= */
+
+      .wave-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .wave-svg {
+        position: absolute;
+        width: 300%;
+        height: 100%;
+      }
+
+      .wave-line {
+        fill: none;
+        stroke-width: 1.5;
+        filter: drop-shadow(0 0 8px rgba(0, 150, 255, 0.6));
+      }
+
+      /* Combined horizontal + vertical animation */
+      @keyframes waveFlow1 {
+        0% {
+          transform: translateX(0) translateY(0);
+        }
+        50% {
+          transform: translateX(-25%) translateY(-20px);
+        }
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+      }
+
+      @keyframes waveFlow2 {
+        0% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-25%) translateY(25px);
+        }
+        100% {
+          transform: translateX(0) translateY(0);
+        }
+      }
+
+      /* ================= Container ================= */
+
+      .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 10;
+      }
+
+      h1 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 25px;
+        letter-spacing: 3px;
+        text-align: center;
+        text-shadow:
+          2px 2px 0px #00ffff,
+          4px 4px 0px #0066ff;
+          image-rendering: pixelated;
+          position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+      }
+
+      /* ================= Floating Links ================= */
+
+      .link {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      }
+
+      .link:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 25px cyan;
+      }
+
+      .link img {
+        width: 40px;
+        height: 40px;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+      .cursor-glow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        pointer-events: none;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 150, 255, 0.35) 0%,
+          rgba(0, 150, 255, 0.2) 40%,
+          rgba(0, 150, 255, 0.05) 70%,
+          transparent 100%
+        );
+        filter: blur(40px);
+        transform: translate(-50%, -50%);
+        z-index: 5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wave-container">
+      <svg class="wave-svg" viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <path
+          class="wave-line"
+          stroke="rgba(0,150,255,0.85)"
+          style="animation: waveFlow1 16s ease-in-out infinite"
+          d="M0 260 Q 180 120 360 260 T 720 260 T 1080 260 T 1440 260 T 1800 260 T 2160 260 T 2520 260 T 2880 260"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(0,140,255,0.75)"
+          style="animation: waveFlow2 20s ease-in-out infinite"
+          d="M0 285 Q 180 405 360 285 T 720 285 T 1080 285 T 1440 285 T 1800 285 T 2160 285 T 2520 285 T 2880 285"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(0,120,255,0.65)"
+          style="animation: waveFlow1 24s ease-in-out infinite"
+          d="M0 310 Q 180 170 360 310 T 720 310 T 1080 310 T 1440 310 T 1800 310 T 2160 310 T 2520 310 T 2880 310"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(0,100,255,0.55)"
+          style="animation: waveFlow2 28s ease-in-out infinite"
+          d="M0 335 Q 180 460 360 335 T 720 335 T 1080 335 T 1440 335 T 1800 335 T 2160 335 T 2520 335 T 2880 335"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(80,0,255,0.45)"
+          style="animation: waveFlow1 32s ease-in-out infinite"
+          d="M0 360 Q 180 220 360 360 T 720 360 T 1080 360 T 1440 360 T 1800 360 T 2160 360 T 2520 360 T 2880 360"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(120,0,255,0.35)"
+          style="animation: waveFlow2 36s ease-in-out infinite"
+          d="M0 385 Q 180 560 360 385 T 720 385 T 1080 385 T 1440 385 T 1800 385 T 2160 385 T 2520 385 T 2880 385"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(0,150,255,0.85)"
+          style="animation: waveFlow1 16s ease-in-out infinite"
+          d="M0 260 Q 180 120 360 260 T 720 260 T 1080 260 T 1440 260 T 1800 260 T 2160 260 T 2520 260 T 2880 260"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(0,140,255,0.75)"
+          style="animation: waveFlow2 20s ease-in-out infinite"
+          d="M0 285 Q 180 405 360 285 T 720 285 T 1080 285 T 1440 285 T 1800 285 T 2160 285 T 2520 285 T 2880 285"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(0,120,255,0.65)"
+          style="animation: waveFlow1 24s ease-in-out infinite"
+          d="M0 310 Q 180 170 360 310 T 720 310 T 1080 310 T 1440 310 T 1800 310 T 2160 310 T 2520 310 T 2880 310"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(0,100,255,0.55)"
+          style="animation: waveFlow2 28s ease-in-out infinite"
+          d="M0 335 Q 180 460 360 335 T 720 335 T 1080 335 T 1440 335 T 1800 335 T 2160 335 T 2520 335 T 2880 335"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(80,0,255,0.45)"
+          style="animation: waveFlow1 32s ease-in-out infinite"
+          d="M0 360 Q 180 220 360 360 T 720 360 T 1080 360 T 1440 360 T 1800 360 T 2160 360 T 2520 360 T 2880 360"
+        />
+
+        <path
+          class="wave-line"
+          stroke="rgba(120,0,255,0.35)"
+          style="animation: waveFlow2 36s ease-in-out infinite"
+          d="M0 385 Q 180 560 360 385 T 720 385 T 1080 385 T 1440 385 T 1800 385 T 2160 385 T 2520 385 T 2880 385"
+        />
+      </svg>
+    </div>
+
+    <div class="container">
+      <h1>
+        Step in, homie. You're in my territory now. Link up with me, build
+        connections, and let's run this game!
+      </h1>
+
+      <div class="link" onclick="openLink('https://discord.gg/Yj9Jk8dEFX')">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" />
+      </div>
+
+      <div class="link" onclick="openLink('https://youtube.com')">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" />
+      </div>
+
+      <div class="link" onclick="openLink('https://tiktok.com')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" />
+      </div>
+
+      <div class="link" onclick="openLink('https://instagram.com/ridhoyaka_')">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" />
+      </div>
+
+      <div class="link" onclick="openLink('https://github.com/ridhoyaka')">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" />
+      </div>
+
+      <div class="link" onclick="openLink('https://open.spotify.com/user/mt0v05q3sjplk4tm81xpoob0y?si=4fb601c2fade49fc')">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" />
+      </div>
+    </div>
+
+    <script>
+      const links = document.querySelectorAll(".link");
+      const placedPositions = [];
+      const ICON_SIZE = 80; // ukuran area aman
+      const MIN_DISTANCE = 100; // jarak minimum antar icon
+
+      function isTooClose(x, y) {
+        for (let pos of placedPositions) {
+          const dx = pos.x - x;
+          const dy = pos.y - y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < MIN_DISTANCE) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      links.forEach((link) => {
+        let x, y;
+        let attempts = 0;
+
+        do {
+          x = Math.random() * (window.innerWidth - ICON_SIZE);
+          y = Math.random() * (window.innerHeight - ICON_SIZE);
+          attempts++;
+        } while (isTooClose(x, y) && attempts < 100);
+
+        placedPositions.push({ x, y });
+
+        link.style.left = x + "px";
+        link.style.top = y + "px";
+        link.style.animation = `float ${3 + Math.random() * 3}s ease-in-out infinite`;
+      });
+
+      function openLink(url) {
+        window.open(url, "_blank");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const glow = document.querySelector(".cursor-glow");
+
+        document.addEventListener("mousemove", (e) => {
+          glow.style.left = e.clientX + "px";
+          glow.style.top = e.clientY + "px";
+        });
+      });
+    </script>
+    <div class="cursor-glow"></div>
+  </body>
+</html>
